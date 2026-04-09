@@ -1,3 +1,5 @@
+# The script below is the first version of this pipeline - with transcription record creation in SQLite. The current version does not include keyword metadata and generates transcription records in PostgreSQL.
+
 import os
 import sqlite3
 import subprocess
