@@ -1,3 +1,5 @@
+# The below sript is the first version script that generates logging. Incorporated into the 'whisper-transcribe.sh' script which is the next iteration of the pipeline overall.
+
 #!/bin/bash
 
 echo "Saving transcripts to file and creating log of transcript activity..."
