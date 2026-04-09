@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Use this script as a stand-alone script to clean filenames prior to running a bulk-transcribe function - or incorporate this into a transription script like the 'watch_and_transcribe.py' or 'Transcribe_GH.py' script.
+
 INPUT="$1"
 echo "🎧 Cleaning filenames for CLI safety..."
 
