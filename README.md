@@ -26,12 +26,13 @@ An open-source, low-code automated transcription pipeline designed to produce sp
 | `whisper-transcribe.sh`          | Transcribes a single audio file using Whisper CLI (pipeline v1; standalone or building block)        |
 | `clean-filenames.sh`             | Cleans audio file names for safety (pipeline v1–v2; standalone or utility)                          |
 | `whisper_transcript_log.sh`      | Logs transcription events with status, timestamp, and filename for auditability                     |
-| `watch_and_transcribe.py`        | Full pipeline (v3): cleans filenames, batch transcribes, extracts keywords, counts word length, logs, stores in **PostgreSQL**, includes built-in DB repair utility |
+| `watch_and_transcribe.py`        | This is the first version of this pipeline with keyword metadata, word count, and db record creation in SQLite:
+      Cleans filenames, batch transcribes, extracts keywords, counts word length, logs, stores in **SQLite**, includes built-in DB repair utility |
 | `repair_transcript_db.py`        | **Standalone** on-demand utility to repair or rebuild your transcript DB from existing transcript files (for bulk recovery, troubleshooting, or advanced workflows) |
-| `Transcribe_GH.py`                  | **Updated for use with postgreSQL & PgAdmin** Python script that enables User to save output to postgreSQL dB that may be managed via CLI or PgAdmin GUI. |
+| `Transcribe_GH.py`                  | **Updated for use with postgreSQL & PgAdmin** Python script that enables User to save output to **PostgreSQL** dB that may be managed via CLI or **PgAdmin** GUI. |
 
 > **Note:** The original bash scripts (`whisper-transcribe.sh`, `clean-filenames.sh`, `whisper_transcript_log.sh`) represent earlier iterations of this pipeline and are preserved for reference, reproducibility, and modular use.
-> **Next iteration:** `watch_and_transcribe.py` & `repair_transcript_db.py`
+> **Earlier version full pipeline:** `watch_and_transcribe.py` & `repair_transcript_db.py`
 > **Current iteration:** `Transcribe_GH.py` for use with postgreSQL, pgAdmin, and duplicate check.
 
 ---
@@ -47,11 +48,14 @@ An open-source, low-code automated transcription pipeline designed to produce sp
 
 ## 📊 Database Schema
 The PostgreSQL database includes the following columns for each transcription record:
-- `file_size`
-- `original_filename`
-- `word_count`
-- `keywords`
-- `incorporation_status` (tracked via LibreOffice Calc)
+- 'id'
+- 'original_filename'
+- 'file_size'
+- 'word_count'
+- 'transcription_text'
+- 'created_at'
+- 'updated_at'
+
 
 Example query to retrieve transcriptions:
 ```sql
@@ -62,8 +66,7 @@ SELECT * FROM memoir_recordings ORDER BY word_count DESC;
 
 ## 🖼️ Project Evolution
 **Updated**
-- Pipeline - Overview and value proposition, viewable at [[(https://www.cathrinmcdougall.com/workflow-optimization/transcription-pipeline)
-](https://www.cathrinmcdougall.com/transcription-pipeline)
+- Pipeline - Overview and value proposition, viewable at [cathrinmcdougall.com/transcription-pipeline](https://www.cathrinmcdougall.com/transcription-pipeline)
 
 ---
 
@@ -89,6 +92,7 @@ Included in the [Examples/](Examples/) are sample files to show what the outputs
 ## 💬 Future Goals
 - Docker containerization
 - GUI for non-technical User access
+- Agentic workflow
 ---
 
 ## 🤝 License
@@ -99,6 +103,5 @@ Licensed under the GNU General Public License v2.0. See [LICENSE](LICENSE).
 ## 👩‍💻 Author
 **Cathrin McDougall**
 Certified Scrum Master & Product Owner
-[Professional Website](https://www.cathrinmcdougall.com/) | [GitHub](https://github.com/catatwork217)
-
-Inspired by a passion for storytelling, automation, and elegant systems thinking.
+**Passionate advocate of AI Governance & ethical application of AI**
+[Substack-AgileEveryday](https://substack.com/@agileeveryday) | [GitHub](https://github.com/catatwork217)
