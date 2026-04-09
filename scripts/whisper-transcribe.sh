@@ -1,3 +1,5 @@
+# The shell script below is the initial stand-alone transcription script - designed to remain an 'on-demand' script that a User may run in terminal or at the command line.
+
 #!/bin/bash
 
 AUDIO_FILE="$1"
@@ -13,7 +15,7 @@ fi
 mkdir -p "$OUTDIR"
 
 # Transcribe
-/home/cathrin/anaconda3/bin/whisper "$AUDIO_FILE" \
+/home/anaconda3/bin/whisper "$AUDIO_FILE" \
 	--model "$MODEL" \
 	--language English \
 	--output_dir "$OUTDIR" \
