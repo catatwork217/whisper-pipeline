@@ -1,6 +1,6 @@
 #!/bin/bash
 # transcribe.sh - Bulk transcribe all audio files in a given folder
-# use this for on-demand transcription
+# Use this for on-demand transcription that may run in the background against any file in a directory.
 
 AUDIO_DIR="$1"
 
