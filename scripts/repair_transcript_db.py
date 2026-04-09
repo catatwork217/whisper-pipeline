@@ -1,3 +1,5 @@
+# This script may be run against an existing db with transcribed records - to check for duplicates against existing db.
+
 import os
 import sqlite3
 import re
