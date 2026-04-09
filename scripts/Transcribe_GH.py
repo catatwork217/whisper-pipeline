@@ -1,3 +1,5 @@
+# This is the current version of this pipeline. DB transcription records get generated through PostgreSQL.
+
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
