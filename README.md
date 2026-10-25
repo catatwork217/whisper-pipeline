@@ -67,7 +67,6 @@ SELECT * FROM memoir_recordings ORDER BY word_count DESC;
 ## 🖼️ Project Evolution
 
 ## 📁 Examples
-Included in the [Examples/](Examples/) are sample files to show what the outputs will look like in all formats: `.txt`, `.tsv`, `.vtt`, `.srt`, `json`.
 - **JSON**: For integration with REST APIs.
 - **SRT/VTT**: Different accessibility captions file formats.
 - **TXT**: Regular text file format for import or conversion to any word processing format needed.
