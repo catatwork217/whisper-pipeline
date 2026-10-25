@@ -65,10 +65,6 @@ SELECT * FROM memoir_recordings ORDER BY word_count DESC;
 ---
 
 ## 🖼️ Project Evolution
-**Updated**
-- Pipeline - Overview and value proposition, viewable at [cathrinmcdougall.com/transcription-pipeline](https://www.cathrinmcdougall.com/transcription-pipeline)
-
----
 
 ## 📁 Examples
 Included in the [Examples/](Examples/) are sample files to show what the outputs will look like in all formats: `.txt`, `.tsv`, `.vtt`, `.srt`, `json`.
